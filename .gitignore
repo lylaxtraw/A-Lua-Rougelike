@@ -1,0 +1,37 @@
+# =========================
+# Archivos del sistema macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Trash-*
+.VolumeIcon.icns
+
+# =========================
+# Empaquetados y Builds de LÖVE
+# =========================
+*.love
+*.zip
+/build/
+/dist/
+/bin/
+/releases/
+
+# =========================
+# Logs y compilaciones de Lua
+# =========================
+*.log
+luac.out
+
+# =========================
+# Configuraciones de Editores de Código
+# =========================
+# VS Code
+.vscode/
+*.code-workspace
+# ZeroBrane Studio (Popular para Lua)
+*.cfg
+# IntelliJ / Otros
+.idea/
+*.swp
