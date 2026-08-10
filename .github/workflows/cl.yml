@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 
 
     steps:
       - name: Clone repo
@@ -17,7 +17,7 @@ jobs:
       - name: Config LuaJIT
         uses: leafo/gh-actions-lua@v10
         with:
-          luaVersion: "luajit" # <-- Cambio aquí
+          luaVersion: "luajit-2.1.0-beta3"
 
       - name: Config LuaRocks
         uses: leafo/gh-actions-luarocks@v5
