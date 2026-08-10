@@ -27,11 +27,7 @@ Charms.List = {
     master = { id = "master", name = "Master Charm", tier = 4, description = "Applies only the downsides of Expert Charm." },
     
     -- TIER 5
-<<<<<<< HEAD
-    insanity = { id = "insanity", name = "Insanity Charm", tier = 5, description = "Applies Master, Weaponmaster, & Chaos Charms. Losing once resets you back (Basically, a Hardcore run)." }
-=======
     insanity = { id = "insanity", name = "Insanity Charm", tier = 5, description = "Applies Master, Weaponmaster, & Chaos Charms. Winning floor is 100." }
->>>>>>> v0.1.0
 }
 
 function Charms.Get(id)

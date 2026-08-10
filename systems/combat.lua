@@ -3,13 +3,9 @@ local EventQueue = require("core.event_queue")
 local Weapons = require("data.weapons")
 local Shields = require("data.shields")
 local Spells = require("data.spells")
-<<<<<<< HEAD
-local Potions = require("systems.potion_system")
-=======
 local Status = require("data.status")
 local Potions = require("systems.potion_system")
 local Type = require("data.enemies")
->>>>>>> v0.1.0
 
 local Combat = {}
 
@@ -47,8 +43,6 @@ local function Defeat(state)
     state.result = "defeat"
 end
 
-<<<<<<< HEAD
-=======
 local function CombatTickStatus(state)
     local player, enemy = state.player, state.enemy
     if player.status and player.status.type then
@@ -68,25 +62,19 @@ local function CombatTickStatus(state)
     end
 end
 
->>>>>>> v0.1.0
 local function EnemyTurn(state)
     if state.finished then return end
     local player, enemy = state.player, state.enemy
 
-<<<<<<< HEAD
-=======
     -- FIX: Apply status effects at the start of the enemy's turn
     CombatTickStatus(state)
 
->>>>>>> v0.1.0
     if enemy.paralyzed then
         Push(state, "TEXT", { text = enemy.name .. " is paralyzed and cannot move!" })
         enemy.paralyzed = false
         return
     end
 
-<<<<<<< HEAD
-=======
     if enemy.rooted then
         local movement = enemy.rooted.atkchance or 0
         if math.random(4) == movement then
@@ -94,23 +82,16 @@ local function EnemyTurn(state)
         end
     end
 
->>>>>>> v0.1.0
     local shield = Shield(player)
     local result = CombatMath.EnemyDamage(enemy, player, shield, player.defending)
     player.hp = math.max(0, player.hp - result.damage)
 
     Push(state, "ENEMY_ATTACK", { attacker = enemy.name, damage = result.damage, critical = result.critical })
-<<<<<<< HEAD
-
-=======
->>>>>>> v0.1.0
     if (result.reflected or 0) > 0 then
         enemy.hp = math.max(0, enemy.hp - result.reflected)
         Push(state, "TEXT", { text = "Reflected " .. result.reflected .. " damage back!" })
         if enemy.hp <= 0 then return Victory(state) end
     end
-<<<<<<< HEAD
-=======
     
     if (enemy.id == "red_slime" or enemy.element == "fire") and enemy.burnAttack == 0.1 then
         player.status = player.status or { id = {} }
@@ -170,24 +151,17 @@ local function EnemyTurn(state)
         Push(state, "TEXT", { text = enemy.name .. " is drained by the flower and takes " .. enemy.flowerDamageEnemy .. " damage!" })
         if enemy.hp <= 0 then return Victory(state) end
     end
->>>>>>> v0.1.0
 
     if player.hp <= 0 then Defeat(state) end
 end
 
 local function Attack(state)
     local player, enemy = state.player, state.enemy
-<<<<<<< HEAD
-    
-=======
->>>>>>> v0.1.0
     if enemy.isRuler then
         Push(state, "TEXT", { text = "The Ruler is immune to physical attacks!" })
         return EnemyTurn(state)
     end
 
-<<<<<<< HEAD
-=======
     -- FIX: Validation of paralyzed & frostbited status before allowing the player to attack
     if player.paralyzed then
         Push(state, "TEXT", { text = player.name .. " is paralyzed and cannot move!" })
@@ -200,25 +174,16 @@ local function Attack(state)
         return EnemyTurn(state)
     end
 
->>>>>>> v0.1.0
     local weapon = Weapon(player)
     local result = CombatMath.PlayerDamage(player, enemy, weapon)
 
     enemy.hp = math.max(0, enemy.hp - result.damage)
     Push(state, "PLAYER_ATTACK", { weapon = weapon.name, damage = result.damage, critical = result.critical })
 
-<<<<<<< HEAD
-    -- ANGER POINT ABILITY (Fixed text to match the 1.5x multiplier!)
-=======
->>>>>>> v0.1.0
     if result.critical and enemy.ability == "anger_point" then
         enemy.atk = enemy.atk * 1.5
         Push(state, "TEXT", { text = enemy.name .. "'s Anger Point triggered! Its attack surged!" })
     end
-<<<<<<< HEAD
-
-=======
->>>>>>> v0.1.0
     if enemy.hp <= 0 then return Victory(state) end
     EnemyTurn(state)
 end
@@ -233,28 +198,16 @@ local function CastSpell(state, spellId)
         return
     end
 
-<<<<<<< HEAD
-    -- THE FIX: Push the spell's flavour text to the combat log before resolving it!
-=======
->>>>>>> v0.1.0
     if spell.flavour then
         Push(state, "TEXT", { text = spell.flavour })
     end
 
     if enemy.isMaster then
         player.mana = player.mana - spell.manaCost
-<<<<<<< HEAD
-        Push(state, "TEXT", { text = "The Slime Master is a wall of flesh! Spells do nothing!" })
-        return EnemyTurn(state)
-    end
-
-    -- Elemental Matchups
-=======
         Push(state, "TEXT", { text = "The " .. enemy.name .. " Master is a wall of flesh! Spells do nothing!" })
         return EnemyTurn(state)
     end
 
->>>>>>> v0.1.0
     local damageMult = 1.0
     if enemy.element then
         if Weaknesses[enemy.element] == element then
@@ -268,11 +221,7 @@ local function CastSpell(state, spellId)
 
     if enemy.isRuler and damageMult < 2.0 and element ~= "true" then
         damageMult = 0.0
-<<<<<<< HEAD
-        Push(state, "TEXT", { text = "The Ruler shrugs off the attack. Only its weakness can pierce its aura!" })
-=======
         Push(state, "TEXT", { text = "The " .. enemy.name .. " Ruler shrugs off the attack. Only its weakness can pierce its aura!" })
->>>>>>> v0.1.0
     end
 
     player.mana = player.mana - spell.manaCost
@@ -280,13 +229,10 @@ local function CastSpell(state, spellId)
     local function spellPushEvent(eventType, data)
         if eventType == "SPELL_CAST" then data.damage = math.floor(data.damage * damageMult) end
         Push(state, eventType, data)
-<<<<<<< HEAD
-=======
         if eventType == "STATUS_APPLIED" then
             local status = Status.List[data.status]
             if status and status.apply then status.apply(enemy, player) end
         end
->>>>>>> v0.1.0
     end
 
     spell.cast(player, enemy, spellPushEvent)
@@ -308,8 +254,6 @@ function Combat.CreateState(player, enemy)
     if enemy.isElite then
         Push(state, "TEXT", { text = "Elite " .. enemy.name .. "'s aura has manifested! All of its stats received a boost!" })
     end
-<<<<<<< HEAD
-=======
 
     if enemy.isRuler then
         Push(state, "TEXT", { text = "The " .. enemy.name .. " Ruler's aura is overwhelming! Find a way to pierce it!" })
@@ -318,7 +262,6 @@ function Combat.CreateState(player, enemy)
     if enemy.isMaster then
         Push(state, "TEXT", { text = "The " .. enemy.name .. " Master is a wall of flesh! Spells do nothing!" })
     end
->>>>>>> v0.1.0
     return state
 end
 
