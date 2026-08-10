@@ -40,7 +40,10 @@ Spells.List = {
         cast = function(player, enemy, pushEvent)
             local hits = math.random(1, 10)
             local totalDamage = 0
-            for i = 1, hits do totalDamage = totalDamage + CalculateDamage(player, enemy, 15) end
+            for count = 1, hits do 
+                totalDamage = totalDamage + CalculateDamage(player, enemy, 15) 
+                count = count + 1
+                end
             enemy.hp = math.max(0, enemy.hp - totalDamage)
             pushEvent("SPELL_CAST", { spell = "Icicle Rush", damage = totalDamage, text = hits .. " ice shards puncture your enemy!" })
         end
