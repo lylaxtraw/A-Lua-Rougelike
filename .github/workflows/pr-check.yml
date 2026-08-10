@@ -1,0 +1,19 @@
+name: PR Check (Validate .love Packaging)
+
+on:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Simulate .love Packaging
+        run: |
+          zip -9 -r test_game.love . -x "*.git*" -x "*.vscode*" -x "*.DS_Store"
+          test -f test_game.love
+          echo "Packaging simulation successful. .love file created."

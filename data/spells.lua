@@ -16,7 +16,11 @@ end
 Spells.List = {
     itchy_pollen = {
         id = "itchy_pollen", name = "Itchy Pollen", manaCost = 5, price = 0,
+<<<<<<< HEAD
         flavour = "The air fills with irritating, magical dust.",
+=======
+        flavour = "The enemy is spored with irritating, magical dust.",
+>>>>>>> v0.1.0
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 5)
             enemy.hp = math.max(0, enemy.hp - damage)
@@ -30,7 +34,10 @@ Spells.List = {
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 50)
             enemy.hp = math.max(0, enemy.hp - damage)
+<<<<<<< HEAD
             enemy.status = { type = "burn", duration = 3, power = 0.10 }
+=======
+>>>>>>> v0.1.0
             pushEvent("SPELL_CAST", { spell = "Fire Ball", damage = damage, text = "The searing heat turns their skin to cinder." })
             pushEvent("BURN_APPLIED", { enemy = enemy.name })
         end
@@ -58,7 +65,11 @@ Spells.List = {
     leafy_brew = {
         id = "leafy_brew", name = "Leafy Brew", manaCost = 25, price = 500,
         flavour = "A swirl of rejuvenating leaves envelops you.",
+<<<<<<< HEAD
         cast = function(player, enemy, pushEvent)
+=======
+        cast = function(player, pushEvent)
+>>>>>>> v0.1.0
             player.hp = math.min(player.maxHp, player.hp + 20)
             pushEvent("SPELL_CAST", { spell = "Leafy Brew", damage = 0, text = "The glowing leaves mend your wounds." })
         end
@@ -69,7 +80,10 @@ Spells.List = {
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 10)
             enemy.hp = math.max(0, enemy.hp - damage)
+<<<<<<< HEAD
             enemy.paralyzed = true
+=======
+>>>>>>> v0.1.0
             pushEvent("SPELL_CAST", { spell = "Zappy Touch", damage = damage, text = "A jolt of electricity locks their muscles!" })
             pushEvent("PARALYSIS_APPLIED", { enemy = enemy.name })
         end
@@ -80,7 +94,10 @@ Spells.List = {
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 70)
             enemy.hp = math.max(0, enemy.hp - damage)
+<<<<<<< HEAD
             enemy.status = { type = "burn", duration = 5, power = 0.15 }
+=======
+>>>>>>> v0.1.0
             pushEvent("SPELL_CAST", { spell = "Lava Burst", damage = damage, text = "Molten rock engulfs them in agonizing heat." })
             pushEvent("BURN_APPLIED", { enemy = enemy.name })
         end
@@ -108,8 +125,12 @@ Spells.List = {
     rooted_beating = {
         id = "rooted_beating", name = "Rooted Beating", manaCost = 15, price = 1800,
         flavour = "Vines erupt from the earth, tightly binding your foe.",
+<<<<<<< HEAD
         cast = function(player, enemy, pushEvent)
             enemy.status = { type = "rooted", duration = 5, power = 25 }
+=======
+        cast = function(enemy, pushEvent)
+>>>>>>> v0.1.0
             pushEvent("SPELL_CAST", { spell = "Rooted Beating", damage = 0, text = "Living roots drag them into the dirt!" })
             pushEvent("STATUS_APPLIED", { enemy = enemy.name, status = "Rooted" })
         end
@@ -120,7 +141,10 @@ Spells.List = {
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 40)
             enemy.hp = math.max(0, enemy.hp - damage)
+<<<<<<< HEAD
             enemy.paralyzed = true
+=======
+>>>>>>> v0.1.0
             player.dodgeChance = (player.dodgeChance or 0) + 0.33
             pushEvent("SPELL_CAST", { spell = "Lightning Dodge", damage = damage, text = "You evade with the speed of a thunderbolt, stunning them!" })
             pushEvent("PARALYSIS_APPLIED", { enemy = enemy.name })
@@ -132,7 +156,10 @@ Spells.List = {
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 100)
             enemy.hp = math.max(0, enemy.hp - damage)
+<<<<<<< HEAD
             enemy.status = { type = "scorch", duration = 2, power = 0.25 }
+=======
+>>>>>>> v0.1.0
             pushEvent("SPELL_CAST", { spell = "Magmatic Downpour", damage = damage, text = "A torrential rain of magma melts away their strength." })
             pushEvent("SCORCH_APPLIED", { enemy = enemy.name })
         end
@@ -143,7 +170,10 @@ Spells.List = {
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 70)
             enemy.hp = math.max(0, enemy.hp - damage)
+<<<<<<< HEAD
             enemy.status = { type = "hail", duration = -1, power = 10 }
+=======
+>>>>>>> v0.1.0
             pushEvent("SPELL_CAST", { spell = "Frozen Barrage", damage = damage, text = "A violent blizzard engulfs the enemy." })
         end
     },
@@ -158,11 +188,18 @@ Spells.List = {
     },
     sundowmer_bloom = {
         id = "sundowmer_bloom", name = "Sundowmer Bloom", manaCost = 150, price = 7500,
+<<<<<<< HEAD
         flavour = "A terrifying, beautiful flower blooms, draining life.",
         cast = function(player, enemy, pushEvent)
             local damage = CalculateDamage(player, enemy, 60)
             enemy.hp = math.max(0, enemy.hp - damage)
             enemy.status = { type = "flower", duration = -1, power = 0.05 }
+=======
+        flavour = "A terrifying, beautiful flower blooms and roots itself to the enemy, draining its life.",
+        cast = function(player, enemy, pushEvent)
+            local damage = CalculateDamage(player, enemy, 60)
+            enemy.hp = math.max(0, enemy.hp - damage)
+>>>>>>> v0.1.0
             pushEvent("SPELL_CAST", { spell = "Sundowmer Bloom", damage = damage, text = "The parasitic blossom takes root in their soul." })
         end
     },

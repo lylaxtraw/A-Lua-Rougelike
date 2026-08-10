@@ -1,0 +1,24 @@
+name: Suggestion
+description: Submit a suggestion for improving the game.
+title: "[SUGGESTION]: "
+labels: ["suggestion", "pending-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Thanks for wanting to improve **A-Lua-Rougelike**! Please detail your idea as much as possible.
+  - type: textarea
+    id: description
+    attributes:
+      label: Suggestion Description
+      description: What idea do you have in mind? Describe how it would work in the game.
+      placeholder: I think potions should...
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why should we implement it?
+      description: What value does this add to the player experience or game balance?
+    validations:
+      required: true

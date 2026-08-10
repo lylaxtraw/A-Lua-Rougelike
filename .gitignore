@@ -1,5 +1,9 @@
 # =========================
+<<<<<<< HEAD
 # Archivos del sistema macOS
+=======
+# macOS specific files
+>>>>>>> v0.1.0
 # =========================
 .DS_Store
 .AppleDouble
@@ -9,7 +13,19 @@
 .VolumeIcon.icns
 
 # =========================
+<<<<<<< HEAD
 # Empaquetados y Builds de LÖVE
+=======
+# Windows specific files
+# =========================
+*.exe
+*.dll
+*.obj
+*.pdb
+
+# =========================
+# LÖVE specific files
+>>>>>>> v0.1.0
 # =========================
 *.love
 *.zip
@@ -19,19 +35,44 @@
 /releases/
 
 # =========================
+<<<<<<< HEAD
 # Logs y compilaciones de Lua
+=======
+# Lua specific files
+>>>>>>> v0.1.0
 # =========================
 *.log
 luac.out
 
 # =========================
+<<<<<<< HEAD
 # Configuraciones de Editores de Código
+=======
+# Editor specific files
+>>>>>>> v0.1.0
 # =========================
 # VS Code
 .vscode/
 *.code-workspace
+<<<<<<< HEAD
 # ZeroBrane Studio (Popular para Lua)
 *.cfg
 # IntelliJ / Otros
 .idea/
 *.swp
+=======
+# ZeroBrane Studio
+*.cfg
+# IntelliJ / Others
+.idea/
+*.swp
+
+# =========================
+# Game save files
+# =========================
+*.sav
+*.json
+# If you want to ignore specific save files, you can add them here. For example:
+# save_data.json
+# config.ini
+>>>>>>> v0.1.0

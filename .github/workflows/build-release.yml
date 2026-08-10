@@ -1,0 +1,76 @@
+name: Build and Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Create .love file (base game)
+        run: |
+          # Exclude unnecessary files and directories from the .love file
+          zip -9 -r game.love . -x "*.git*" -x "*.vscode*" -x "*.DS_Store" -x "README.md" -x "LICENSE" -x ".gitignore" -x "NOTES.pdf" -x "betatest_notes.txt" -x "README.txt"
+
+      - name: Package for Windows (64-bit)
+        run: |
+          # 1. Download LÖVE 11.5 for Windows
+          wget https://github.com/love2d/love/releases/download/11.5/love-11.5-win64.zip
+          unzip love-11.5-win64.zip -d win64
+          
+          # 2. Fuse & clean
+          cat win64/love-11.5-win64/love.exe game.love > win64/love-11.5-win64/ALR_Beta.exe
+          rm win64/love-11.5-win64/love.exe
+          
+          # 3. Rename the folder so the user receives something clean and professional
+          mv win64/love-11.5-win64 win64/ALR_Beta-Windows
+          
+          # 4. Copy the manuals to the new Windows folder
+          # (The "|| true" prevents the bot from failing if you decide to delete or change the name of a txt file)
+          cp NOTES.pdf win64/ALR_Beta-Windows/ || true
+          cp betatest_notes.txt win64/ALR_Beta-Windows/ || true
+          cp README.txt win64/ALR_Beta-Windows/ || true
+          
+          # 5. Compress the final folder
+          cd win64
+          zip -9 -r ../ALR_Beta-Windows.zip ALR_Beta-Windows/
+          cd ..
+
+      - name: Package for macOS
+        run: |
+          # 1. Download LÖVE 11.5 for macOS
+          wget https://github.com/love2d/love/releases/download/11.5/love-11.5-macos.zip
+          unzip love-11.5-macos.zip -d macos
+          
+          # 2. Copy your game to the package and rename
+          cp game.love macos/love.app/Contents/Resources/
+          mv macos/love.app macos/ALR_Beta.app
+          
+          # 3. Create a clean container folder so no loose files remain
+          mkdir -p macos/ALR_Beta-macOS
+          mv macos/ALR_Beta.app macos/ALR_Beta-macOS/
+          
+          # 4. Copy the manuals to the new macOS folder
+          cp NOTES.pdf macos/ALR_Beta-macOS/ || true
+          cp betatest_notes.txt macos/ALR_Beta-macOS/ || true
+          cp README.txt macos/ALR_Beta-macOS/ || true
+          
+          # 5. Compress everything while preserving permissions
+          cd macos
+          zip -9 -r -y ../ALR_Beta-macOS.zip ALR_Beta-macOS/
+          cd ..
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            game.love
+            ALR_Beta-Windows.zip
+            ALR_Beta-macOS.zip
