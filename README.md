@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="sprites/baseSlime.pxo" alt="Slime" width="500">
+  <img src="sprites/basePlayer.gif" alt="Slime" width="500">
 </p>
 
 ---
