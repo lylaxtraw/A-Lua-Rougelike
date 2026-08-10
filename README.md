@@ -6,7 +6,8 @@
 
 # A-Lua-Rougelike
 Development of my first game ever: a strategy-combat rougelike that (hopefully) can be played up until the engine unalives itself. Yes, this game is very much based on other rougelikes, like **Balatro**, **Soul Knight**, **Pawnbarian**, **Slice & Dice**, etc.
-Something to pull out while waiting for food at a restaurant, in the bathroom, during a flight, or whenever you want, even without internet. 
+Something to pull out while waiting for food at a restaurant, in the bathroom, during a flight, or whenever you want, even without internet.
+
 **IMPORTANT: THIS IS NOT A SERIOUS GAME, SO DON'T GET MAD WHEN YOU SEE THE PLAYER CHARACTER**
 
 <!-- version-start --> 
