@@ -60,4 +60,30 @@ function CombatMath.EnemyDamage(enemy, player, shield, defending)
     }
 end
 
+-- ========================================================
+-- TDD/BUSTED TESTS
+-- ========================================================
+
+-- Type Chart (Key takes x2 from Value, takes x0 from what it resists)
+local Weaknesses = { earth = "grass", thunder = "earth", fire = "thunder", ice = "fire", grass = "ice" }
+local Resists = { earth = "thunder", thunder = "fire", fire = "ice", ice = "grass", grass = "earth" }
+
+function CombatMath.calculate_damage(attack_element, defense_element, base_damage, is_critical)
+    local multiplier = 1
+
+    if Weaknesses[defense_element] == attack_element then
+        multiplier = 2
+    elseif Resists[defense_element] == attack_element then
+        multiplier = 0
+    end
+
+    local final_damage = base_damage * multiplier
+
+    if is_critical then
+        final_damage = final_damage * 1.5
+    end
+
+    return math.floor(final_damage)
+end
+
 return CombatMath
