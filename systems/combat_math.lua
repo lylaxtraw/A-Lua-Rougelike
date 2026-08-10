@@ -60,8 +60,6 @@ function CombatMath.EnemyDamage(enemy, player, shield, defending)
     }
 end
 
-<<<<<<< HEAD
-=======
 -- ========================================================
 -- TDD/BUSTED TESTS
 -- ========================================================
@@ -88,5 +86,4 @@ function CombatMath.calculate_damage(attack_element, defense_element, base_damag
     return math.floor(final_damage)
 end
 
->>>>>>> v0.1.0
 return CombatMath
