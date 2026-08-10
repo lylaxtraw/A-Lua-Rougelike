@@ -15,10 +15,12 @@ v0.1.0
 
 ## Releases & Betatests **`C`**
 Everytime a new version is published, the repo will generate a folder with:
-> Game file (.app or .exe)
-> NOTES.pdf
-> README.txt
+
+> Game file (.app or .exe),
+> NOTES.pdf,
+> README.txt,
 > betatest_notes.txt
+
 Both `.app` & `.exe` have all files needes for the game to run, so please don't add anything to them
 NOTES must not be altered with, since it already has enough info & the repo serves as a bonus
 Both `.txt`files are meant to be changed and overwritten, with a few especifications:
@@ -38,22 +40,23 @@ The game follows this workflow:
 
 ```mermaid
 flowchart TD
-A[Check personal notes] -> B[Check Issues]
-B -> C[Fix errors (if any)]
-C -> D[Build app locally]
-D -> E[Play]
-E -> F[Write down bugs/errors in CHANGELOG]
-F -> G[Update README & NOTES]
-G -> H[Commit changes]
-H -> I[Keep playing & write down notes]
-I -> A
+A[Check personal notes] --> B[Check Issues]
+B --> C[Fix errors]
+C --> D[Build app locally]
+D --> E[Play]
+E --> F[Write down bugs/errors in CHANGELOG]
+F --> G[Update README & NOTES]
+G --> H[Commit changes]
+H --> I[Keep playing & write down notes]
+I --> A
 ```
 
 ## Story **`C`**
 There isn't lore or story here, atleast for now. But if you really want something to go off of:
-**You've been wondering the woods for years, searching for a way back home. You come across a trail of slimey fluids, leading to a tower. After following it, you end up at the Slime Tower, the one from the tales, it's said to go up to the gods's realm and beyond, with no reward or treasure. Tempted by the idea of brutally killing slimes, you enter. Once inside, all of your equipment is teleported to a shop nearby a campfire, and you feel you strength fade in an instant. Also, you notice your body became a humanoid amalgamation of weird shapes, but you didn't consider it as important as getting back your stuff.**
+> **You've been wondering the woods for years, searching for a way back home. You come across a trail of slimey fluids, leading to a tower. After following it, you end up at the Slime Tower, the one from the tales, it's said to go up to the gods's realm and beyond, with no reward or treasure. Tempted by the idea of brutally killing slimes, you enter. Once inside, all of your equipment is teleported to a shop nearby a campfire, and you feel you strength fade in an instant. Also, you notice your body became a humanoid amalgamation of weird shapes, but you didn't consider it as important as getting back your stuff.**
 **As you advance to the campfire, a sign pops up: "Welcome, unfortunate soul!! You've been inflicted with an uncurable curse, desowning you of your belongings as well as screwing up your body. I'm tired so let's cut to the chase: Reach Floor 20, defeat the Ruler, and I'll remove the curse. And no, you cannot exit until you either die or reach me. Good luck ;)".**
 **After reading it, the sign combusts, turning into 100 gold. With the goal of getting back your stuff, kill slimes, and avoid having to pay your taxes, you head to the campfire to rest, with the stairs to the first floor behind, and prepare to ascend the tower**
+
 Feel free to add whatever to this base story. Maybe I'll add some lore in the futuro trough the game itself. Also yes, the whole body bit is how I justify the goofy looney design
 
 ## Gameplay **`C`**
@@ -67,7 +70,7 @@ During your fights, you are given 5 options:
 * Defend (Shield)
 * Spells (Varies for each spell, elemental attributes)
 * Potions (Recover HP/Mana)
-* Flee (**!!FLEEING A BATTLE IS THE SAME AS LOSING IT**)
+* Flee (**FLEEING A BATTLE IS THE SAME AS LOSING IT**)
 After winning your first run (beating floor 20), you'll be able to flee and unlock charms, which are modifiers to make runs more interesting. You can't choose more than 1 charm per run, but some advanced charms are a combination of preivous ones, so see them as tests of your abilities and understanding of the game rather than just completion. To unlock the next tier of charms, you must complete a run with all charms from your current tier. After unlocking the last charm, you can consider the game 100% completed! (For now, atleast...)
 As of now there's no almanac or index for slimes, weapons, spells, etc etc, so it's REALLY suggested that you save up for the stronger equipment (you'll need it)
 
