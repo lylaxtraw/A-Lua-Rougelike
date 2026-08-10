@@ -30,7 +30,7 @@ function Enemy.Create(id, wave)
         
         -- MASTER (Wave 100, 200...)
         if wave % 100 == 0 then
-            enemy.name = "Slime Master"
+            enemy.name = enemy.name .. " Master"
             enemy.isMaster = true
             enemy.maxHp = enemy.maxHp * 5
             enemy.atk = enemy.atk * 2
@@ -40,7 +40,7 @@ function Enemy.Create(id, wave)
         elseif wave % 20 == 0 then
             enemy.isRuler = true
             enemy.element = Elements[math.random(#Elements)]
-            enemy.name = string.upper(enemy.element:sub(1,1)) .. enemy.element:sub(2) .. " Ruler"
+            enemy.name = enemy.name .. " " .. string.upper(enemy.element:sub(1,1)) .. enemy.element:sub(2) .. " Ruler"
             enemy.maxHp = enemy.maxHp * 3
 
         -- ELITE (Wave 5, 10, 15...)
