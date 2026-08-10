@@ -1,0 +1,12 @@
+name: Convo/Query
+description: You want to have a conversation or ask a question about the game.
+title: "[CONVO]: "
+labels: ["conversation"]
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: Topic of conversation
+      description: What would you like to discuss or what question do you have?
+    validations:
+      required: true

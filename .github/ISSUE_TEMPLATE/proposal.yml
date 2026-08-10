@@ -1,0 +1,30 @@
+name: Proposal (With Deliverable)
+description: You have a ready change, code, art or audio to integrate into the game.
+title: "[PROPOSAL]: "
+labels: ["proposal", "pending-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Incredible! Thanks for bringing a deliverable for the project. Fill in the details to be able to integrate it.
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: What are you delivering?
+      description: Describe the resource, code or art that you have prepared.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to the resource or Pull Request (PR)
+      description: If it's code, put the link to the PR. If it's art/audio, a link to Drive/Dropbox, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Details
+      description: In which part of the code, folder or system should this deliverable go?
+    validations:
+      required: true

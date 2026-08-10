@@ -1,0 +1,51 @@
+name: Bug Report
+description: Something is broken in the game and you want to report it.
+title: "[BUG]: "
+labels: ["bug", "pending-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Oh no! A bug was found in **A-Lua-Rougelike**. Thanks for taking the time to report it, this helps a lot to improve the game.
+  - type: textarea
+    id: description
+    attributes:
+      label: ¿What happened?
+      description: Describe the error with the greatest possible detail. What were you doing when it occurred?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: ¿What should have happened?
+      description: Describe what you expected to happen if the game was working correctly.
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps for me to recreate the error on my computer. (Ej. 1. Open the game 2. Choose the sword 3. Attack the slime...).
+      placeholder: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: On which platform did the error occur?
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other (specify in the description)
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots_logs
+    attributes:
+      label: Screenshots or Logs (Optional but very useful)
+      description: Drag and drop screenshots, short videos, or paste the error text that LÖVE gave you.

@@ -1,0 +1,29 @@
+name: Unit Testing (Busted Framework)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Config LuaJIT
+        uses: leafo/gh-actions-lua@v10
+        with:
+          luaVersion: "luajit-2.1.0-beta3"
+
+      - name: Config LuaRocks
+        uses: leafo/gh-actions-luarocks@v5
+
+      - name: Install Busted Framework
+        run: luarocks install busted
+
+      - name: Run Tests
+        run: busted spec/

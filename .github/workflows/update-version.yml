@@ -1,0 +1,31 @@
+name: Update README Version
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Modify README.md file
+        run: |
+          sed -i 's/.*/'"${{ steps.get_version.outputs.VERSION }}"'/g' README.md
+
+      - name: Save and push changes to repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          # Uses the noreply email address associated with the GitHub Actions bot account
+          git config --global user.email "github-actions[bot]@users.noreply.github.com" 
+          git commit -am "docs: actualizar versión a ${{ steps.get_version.outputs.VERSION }} en README"
+          git push
