@@ -17,7 +17,7 @@ jobs:
       - name: Config LuaJIT
         uses: leafo/gh-actions-lua@v10
         with:
-          luaVersion: "luajit-2.1.0-beta3"
+          luaVersion: "luajit" # <-- Cambio aquí
 
       - name: Config LuaRocks
         uses: leafo/gh-actions-luarocks@v5
