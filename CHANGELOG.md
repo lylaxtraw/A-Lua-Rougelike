@@ -1,4 +1,13 @@
-## [0.1.7](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/v0.1.6...v0.1.7) (2026-08-11)
+## [0.1.8](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/v0.1.7...v0.1.8) (2026-08-11)
+
+
+### Bug Fixes
+
+* fixed pathing of .pdf & .txt files ([93ddbef](https://github.com/lylaxtraw/A-Lua-Rougelike/commit/93ddbeffbb36517f44cf3e38858a9fb42c538783))
+
+
+
+## [0.1.7](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/a421213179fc40040e60c7abf612e7148c110d58...v0.1.7) (2026-08-11)
 
 
 ### Bug Fixes
