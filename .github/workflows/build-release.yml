@@ -58,9 +58,9 @@ jobs:
           mv macos/ALR_Beta.app macos/ALR_Beta-macOS/
           
           # 4. Copy the manuals to the new macOS folder
-          cp ALR_macOS/NOTES.pdf macos/ALR_Beta-macOS/ || true
-          cp ALR_macOS/betatest_notes.txt macos/ALR_Beta-macOS/ || true
-          cp ALR_macOS/GAME_README.txt macos/ALR_Beta-macOS/ || true
+          cp ALR_Mac/NOTES.pdf macos/ALR_Beta-macOS/ || true
+          cp ALR_Mac/betatest_notes.txt macos/ALR_Beta-macOS/ || true
+          cp ALR_Mac/GAME_README.txt macos/ALR_Beta-macOS/ || true
           
           # 5. Compress everything while preserving permissions
           cd macos
