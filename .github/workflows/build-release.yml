@@ -34,9 +34,9 @@ jobs:
           
           # 4. Copy the manuals to the new Windows folder
           # (The "|| true" prevents the bot from failing if you decide to delete or change the name of a txt file)
-          cp NOTES.pdf win64/ALR_Beta-Windows/ || true
-          cp betatest_notes.txt win64/ALR_Beta-Windows/ || true
-          cp README.txt win64/ALR_Beta-Windows/ || true
+          cp ALR_Windows/NOTES.pdf win64/ALR_Beta-Windows/ || true
+          cp ALR_Windows/betatest_notes.txt win64/ALR_Beta-Windows/ || true
+          cp ALR_Windows/GAME_README.txt win64/ALR_Beta-Windows/ || true
           
           # 5. Compress the final folder
           cd win64
@@ -58,9 +58,9 @@ jobs:
           mv macos/ALR_Beta.app macos/ALR_Beta-macOS/
           
           # 4. Copy the manuals to the new macOS folder
-          cp NOTES.pdf macos/ALR_Beta-macOS/ || true
-          cp betatest_notes.txt macos/ALR_Beta-macOS/ || true
-          cp README.txt macos/ALR_Beta-macOS/ || true
+          cp ALR_macOS/NOTES.pdf macos/ALR_Beta-macOS/ || true
+          cp ALR_macOS/betatest_notes.txt macos/ALR_Beta-macOS/ || true
+          cp ALR_macOS/GAME_README.txt macos/ALR_Beta-macOS/ || true
           
           # 5. Compress everything while preserving permissions
           cd macos
