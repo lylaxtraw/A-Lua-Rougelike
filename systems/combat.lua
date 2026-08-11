@@ -3,7 +3,7 @@ local EventQueue = require("core.event_queue")
 local Weapons = require("data.weapons")
 local Shields = require("data.shields")
 local Spells = require("data.spells")
-local Status = require("data.status")
+local Status = require("data.statuses")
 local Potions = require("systems.potion_system")
 local Type = require("data.enemies")
 
@@ -230,7 +230,7 @@ local function CastSpell(state, spellId)
         if eventType == "SPELL_CAST" then data.damage = math.floor(data.damage * damageMult) end
         Push(state, eventType, data)
         if eventType == "STATUS_APPLIED" then
-            local status = Status.List[data.status]
+            local status = Status.List[data.statuses]
             if status and status.apply then status.apply(enemy, player) end
         end
     end
