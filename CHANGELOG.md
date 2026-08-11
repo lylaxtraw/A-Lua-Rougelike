@@ -1,3 +1,12 @@
+## [0.1.9](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/v0.1.8...v0.1.9) (2026-08-11)
+
+
+### Bug Fixes
+
+* changen requiered folder for Mac Build & requierement for combat ([ec81fce](https://github.com/lylaxtraw/A-Lua-Rougelike/commit/ec81fceec9c9223039d250f9c2f1996ec1e7b4a9))
+
+
+
 ## [0.1.8](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/v0.1.7...v0.1.8) (2026-08-11)
 
 
