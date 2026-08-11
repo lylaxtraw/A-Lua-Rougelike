@@ -4,7 +4,7 @@ description: Automatically generates a changelog based on commit messages.
 on:
   push:
     branches:
-      - v0.1.0  # Change this to the branch you're working on for releases
+      - main  # Change this to the branch you're working on for releases
 
 jobs:
   changelog:
