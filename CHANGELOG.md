@@ -1,4 +1,13 @@
-## [0.1.9](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/v0.1.8...v0.1.9) (2026-08-11)
+# [0.2.0](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/v0.1.9...v0.2.0) (2026-08-20)
+
+
+### Features
+
+* added temp logo ([a9e5b76](https://github.com/lylaxtraw/A-Lua-Rougelike/commit/a9e5b76eb9cd4bfd1d71fedc02a5e26fca0e3923))
+
+
+
+## [0.1.9](https://github.com/lylaxtraw/A-Lua-Rougelike/compare/v0.1.6...v0.1.9) (2026-08-11)
 
 
 ### Bug Fixes
