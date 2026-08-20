@@ -14,7 +14,7 @@ Something to pull out while waiting for food at a restaurant, in the bathroom, d
 **IMPORTANT: THIS IS NOT A SERIOUS GAME, SO DON'T GET MAD WHEN YOU SEE THE PLAYER CHARACTER**
 
 <!-- version-start --> 
-v0.1.9
+v0.1.6
 <!-- version-end -->
 
 ## Releases & Betatests **`C`**
