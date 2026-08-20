@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="sprites/basePlayer.gif" alt="Slime" width="500">
+  <img src="sprites/logo.png" alt="logo" width="500">
 </p>
 
 ---
@@ -80,10 +80,8 @@ As of now there's no almanac or index for slimes, weapons, spells, etc etc, so i
 
 ## Assets & Code **`C`**
 ### **PLEASE READ WITH CARE, ANY AN ALL OPINIONS ON THIS REGARD MAY BE LEFT ON THE REPO**
-I will come clear with something right now: part of the code was rewritten, checked, and fixed with the use of AI. All base codes are hand-written, hand-checked, and tested in a local version of the game, plus some trusted friends.
-Everything else (ost, sprites, sfx, etc) are 100% human slop. Although I also quite enjoy coding, my lack of both time and professionalism limit me. Yes, I have knowledge in Lua and I keep on studying everytime I find a roadblock during codebuilding. Oddly enough, the rest of the assets I'm not very familiar with, since I had never done sprites, or compose simple tracks, thus why I decided to do them all by hand, despite the flaws they have. Plus, and let me be clear:
-
-# **FUCK. AI. SLOP.**
+I will come clear with something right now: part of the code was rewritten, checked, and fixed with the use of AI, as well as the logo. All base codes are hand-written, hand-checked, and tested in a local version of the game, plus some trusted friends.
+Everything else (ost, sprites, sfx, etc) are 100% human slop. Although I also quite enjoy coding, my lack of both time and professionalism limit me. Yes, I have knowledge in Lua and I keep on studying everytime I find a roadblock during codebuilding. Oddly enough, the rest of the assets I'm not very familiar with, since I had never done sprites, or compose simple tracks, thus why I decided to do them all by hand, despite the flaws they have.
 
 ## Opinions, discussions, help, & more **`C`**
 If you have any tip, comment, idea, or whatever that you would like to share, feel free to put them in the Issues section of the repository. For personal reasons, I do not accept DMs in any platform or email, plus I'm able to keep the game as transparent as possible. Please follow these rules if you wish to publish anything:
