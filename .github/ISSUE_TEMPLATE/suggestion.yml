@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ¡Thanks for wanting to improve **A-Lua-Rougelike**! Please detail your idea as much as possible.
+        ¡Thanks for wanting to improve **SlimeSpire**! Please detail your idea as much as possible.
   - type: textarea
     id: description
     attributes:

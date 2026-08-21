@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ¡Oh no! A bug was found in **A-Lua-Rougelike**. Thanks for taking the time to report it, this helps a lot to improve the game.
+        ¡Oh no! A bug was found in **SlimeSpire**. Thanks for taking the time to report it, this helps a lot to improve the game.
   - type: textarea
     id: description
     attributes:
