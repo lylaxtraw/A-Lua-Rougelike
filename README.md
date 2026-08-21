@@ -4,10 +4,10 @@
 
 ---
 
-[![Continuous Linting](https://github.com/lylaxtraw/A-Lua-Rougelike/actions/workflows/cl.yml/badge.svg)](https://github.com/lylaxtraw/A-Lua-Rougelike/actions/workflows/cl.yml)
-[![Unit Testing](https://github.com/lylaxtraw/A-Lua-Rougelike/actions/workflows/test.yml/badge.svg)](https://github.com/lylaxtraw/A-Lua-Rougelike/actions/workflows/test.yml)
+[![Continuous Linting](https://github.com/lylaxtraw/SlimeSpire/actions/workflows/cl.yml/badge.svg)](https://github.com/lylaxtraw/SlimeSpire/actions/workflows/cl.yml)
+[![Unit Testing](https://github.com/lylaxtraw/SlimeSpire/actions/workflows/test.yml/badge.svg)](https://github.com/lylaxtraw/SlimeSpire/actions/workflows/test.yml)
 
-# A-Lua-Rougelike
+# SlimeSpire
 Development of my first game ever: a strategy-combat rougelike that (hopefully) can be played up until the engine unalives itself. Yes, this game is very much based on other rougelikes, like **Balatro**, **Soul Knight**, **Pawnbarian**, **Slice & Dice**, etc.
 Something to pull out while waiting for food at a restaurant, in the bathroom, during a flight, or whenever you want, even without internet.
 
@@ -64,7 +64,7 @@ There isn't lore or story here, atleast for now. But if you really want somethin
 Feel free to add whatever to this base story. Maybe I'll add some lore in the futuro trough the game itself. Also yes, the whole body bit is how I justify the goofy looney design
 
 ## Gameplay **`C`**
-ALR plays out like a standard cmd adventure game, with this base loop:
+SlimeSpire plays out like a standard cmd adventure game, with this base loop:
 > You set a campfire and choose to buy stuff, equip items, or quit the game
 > After getting (& equipping) everything, you go to the next floor
 > You fight the slime(s) thta inhabit the floor

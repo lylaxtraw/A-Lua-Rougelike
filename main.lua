@@ -1,4 +1,4 @@
-love.filesystem.setIdentity("A Lua Rougelike", true)
+love.filesystem.setIdentity("SlimeSpire", true)
 math.randomseed(os.time())
 
 -- Declare Game globally so all scenes can access the active player state
